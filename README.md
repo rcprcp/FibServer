@@ -1,6 +1,6 @@
-##FibServer
+## FibServer
 
-###Overview
+### Overview
 This program is a simple Spring Boot application that calculates and returns numbers from  the Fibonacci sequence. 
 
 It provides 3 REST endpoints using HTTP GET (on port 8080): 
@@ -10,7 +10,7 @@ It provides 3 REST endpoints using HTTP GET (on port 8080):
 
 Since the program is only maintaining one sequence (not one per client application), there may be gaps in the sequence when multiple programs are accessing the endpoints. 
 
-###Download, Compile, Test
+### Download, Compile, Test
 
 ```git clone http://github.com/rcprcp/FibServer.git```
 
