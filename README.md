@@ -12,22 +12,18 @@ Since the program is only maintaining one sequence (not one per client applicati
 
 ### Download, Compile, Test
 
-```git clone http://github.com/rcprcp/FibServer.git```
-
-cd into the directory: 
+```git clone http://github.com/rcprcp/FibServer.git``` 
 ```cd FibServer```
-
-Build:
 ```mvn clean package spring-boot:repackage```
 
-Note: The restart "state" is found in ./checkpoint.data - remove this file to start the sequence from 0.
+**Note:** The restart "state" is found in ./checkpoint.data - remove this file to start the sequence from 0.
 
 Start the server: 
 ```java -jar target/fibserver-0.0.1-SNAPSHOT.jar```
 
-The server opens port 8080
+The server opens port 8080.
 
 If desired, test it from your browser: 
-```http://localhost:8080/current```
-```http://localhost:8080/next```
-```http://localhost:8080/previous```
+* ```http://localhost:8080/current```
+* ```http://localhost:8080/next```
+* ```http://localhost:8080/previous```
