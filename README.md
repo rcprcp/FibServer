@@ -10,7 +10,7 @@ It provides 3 REST endpoints using HTTP GET (on port 8080):
 
 Since the program is only maintaining one sequence (not one per client application), there may be gaps in the sequence when multiple programs are accessing the endpoints. 
 
-### Download, Compile, Test
+### Download, Compile, Run
 
 ```
 git clone http://github.com/rcprcp/FibServer.git 
@@ -18,7 +18,17 @@ cd FibServer
 mvn clean package spring-boot:repackage
 ```
 
-**Note:** The restart "state" is found in ./checkpoint.data - remove this file to start the sequence from 0.
+### Test
+You can run the tests from mvn: 
+```
+mvn test 
+```
+or 
+```
+mvn test -Dtest=FibonacciTests
+```
+
+**Note:** The restart "state" is found in ./checkpoint.data - remove this file to start the Fibonacci sequence from 0.
 
 Start the server: 
 ```java -jar target/fibserver-0.0.1-SNAPSHOT.jar```

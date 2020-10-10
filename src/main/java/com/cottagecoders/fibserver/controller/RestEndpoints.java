@@ -3,6 +3,7 @@ package com.cottagecoders.fibserver.controller;
 import com.cottagecoders.fibserver.model.Fibonacci;
 import com.cottagecoders.fibserver.model.FibonacciOverflowException;
 import com.cottagecoders.fibserver.model.FibonacciUnderflowException;
+import com.cottagecoders.fibserver.model.SaveRestoreUsingFile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ public class RestEndpoints {
 
   // use this to ensure correct spelling.
   private static final String FIBONACCI = "fibonacci";
-  Fibonacci fibonacci = new Fibonacci();
+  Fibonacci fibonacci = new Fibonacci(new SaveRestoreUsingFile());
 
   RestEndpoints() {
 
