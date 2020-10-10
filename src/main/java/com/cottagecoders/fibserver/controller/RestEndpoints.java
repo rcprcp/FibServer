@@ -1,0 +1,52 @@
+package com.cottagecoders.fibserver.controller;
+
+import com.cottagecoders.fibserver.model.Fibonacci;
+import com.cottagecoders.fibserver.model.FibonacciOverflowException;
+import com.cottagecoders.fibserver.model.FibonacciUnderflowException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+
+public class RestEndpoints {
+
+  // use this to ensure correct spelling.
+  private static final String FIBONACCI = "fibonacci";
+  Fibonacci fibonacci = new Fibonacci();
+
+  RestEndpoints() {
+
+  }
+
+  @GetMapping(path = "/current")
+  public Map<String, Long> current() {
+
+    HashMap<String, Long> map = new HashMap<>();
+    map.put(FIBONACCI, fibonacci.current());
+    return map;
+
+  }
+
+  @GetMapping(path = "/previous")
+  public Map<String, Long> previous() throws FibonacciUnderflowException {
+
+    long fib = fibonacci.previous();  // may throw an exception, so do this first.
+
+    HashMap<String, Long> map = new HashMap<>();
+    map.put(FIBONACCI, fib);
+    return map;
+  }
+
+  @GetMapping(path = "/next")
+  public Map<String, Long> next() throws FibonacciOverflowException {
+    long val = fibonacci.next();  // may throw an exception, so do this first.
+
+    HashMap<String, Long> map = new HashMap<>();
+    map.put(FIBONACCI, val);
+    return map;
+  }
+}
+
