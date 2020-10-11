@@ -25,7 +25,8 @@ mvn test
 ```
 or 
 ```
-mvn test -Dtest=FibonacciTests
+mvn test -Dtest=TestFibonacci
+mvn test -Dtest=TestSaveRestoreUsingFile
 ```
 
 **Note:** The restart "state" is found in ./checkpoint.data - remove this file to start the Fibonacci sequence from 0.

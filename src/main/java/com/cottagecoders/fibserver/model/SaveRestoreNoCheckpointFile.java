@@ -2,10 +2,10 @@ package com.cottagecoders.fibserver.model;
 
 public class SaveRestoreNoCheckpointFile implements SaveRestore {
 
+  boolean hasData = false;
   private long offset = 0;
   private long current = 1;
   private long previous = 0;
-  boolean hasData = false;
 
   /**
    * This class is used for testing purposes to give a known state, and
@@ -15,7 +15,7 @@ public class SaveRestoreNoCheckpointFile implements SaveRestore {
 
   }
 
-  public long getCurrent(){
+  public long getCurrent() {
     return current;
   }
 

@@ -11,7 +11,7 @@ public class Fibonacci {
   private static final Logger LOG = LoggerFactory.getLogger(Fibonacci.class);
 
   private final List<Long> fibs = new ArrayList<>();
-  SaveRestore  saveRestore;
+  SaveRestore saveRestore;
   private long previous = 0;
   private long current = 1;
   private long offset = 0;
@@ -21,7 +21,7 @@ public class Fibonacci {
    */
   public Fibonacci(SaveRestore sr) {
     saveRestore = sr;
-  if (saveRestore.hasData()) {
+    if (saveRestore.hasData()) {
       offset = saveRestore.getOffset();
       current = saveRestore.getCurrent();
       previous = saveRestore.getPrevious();

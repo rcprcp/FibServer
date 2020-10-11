@@ -9,9 +9,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class FibonacciTests {
+public class TestFibonacci {
   SaveRestore sr = null;
   Fibonacci f = null;
+
   @BeforeEach
   void setup() {
     sr = new SaveRestoreNoCheckpointFile();
@@ -38,6 +39,7 @@ public class FibonacciTests {
     Assertions.assertEquals(3, f.next());
 
   }
+
   @Test
   void testNextPreviousNextPrevious() {
     SaveRestoreNoCheckpointFile sr = new SaveRestoreNoCheckpointFile();
@@ -87,7 +89,6 @@ public class FibonacciTests {
   }
 
 
-
   @Test
   void testUnderflow() {
     SaveRestoreNoCheckpointFile sr = new SaveRestoreNoCheckpointFile();
@@ -99,6 +100,7 @@ public class FibonacciTests {
     Assertions.assertThrows(FibonacciUnderflowException.class, () -> f.previous());
 
   }
+
   @Test
   void testOverflow() {
     SaveRestoreNoCheckpointFile sr = new SaveRestoreNoCheckpointFile();
@@ -108,7 +110,7 @@ public class FibonacciTests {
 
     // This magic number (91) is the number of times we can "next" the Fibonacci sequence
     // and stay within a Java long datatype.
-    for(int i = 0 ; i < 92 ; i++) {
+    for (int i = 0; i < 92; i++) {
       long temp = f.next();
     }
 

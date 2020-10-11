@@ -13,9 +13,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class FibonacciErrorController implements ErrorController{
+public class FibonacciErrorController implements ErrorController {
 
-  @Autowired private ErrorAttributes errorAttributes;
+  @Autowired
+  private ErrorAttributes errorAttributes;
 
   public void setErrorAttributes(ErrorAttributes errorAttributes) {
     this.errorAttributes = errorAttributes;

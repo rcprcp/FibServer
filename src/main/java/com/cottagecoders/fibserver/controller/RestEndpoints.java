@@ -14,12 +14,14 @@ import java.util.Map;
 
 public class RestEndpoints {
 
-  // use this to ensure correct spelling.
+  private static final String FILE_NAME = "./checkpoint.data";
+  // ensure correct spelling :)
   private static final String FIBONACCI = "fibonacci";
-  Fibonacci fibonacci = new Fibonacci(new SaveRestoreUsingFile());
+
+  private final Fibonacci fibonacci;
 
   RestEndpoints() {
-
+    fibonacci = new Fibonacci(new SaveRestoreUsingFile(FILE_NAME));
   }
 
   @GetMapping(path = "/current")
